@@ -39,7 +39,7 @@ document.addEventListener('click', function() {
 
         if (!fastestTime || reactionTime < fastestTime) {
             fastestTime = reactionTime;
-            fastestTimeElement.textContent = fastestTime + 's';
+            fastestTimeElement.textContent = fastestTime + 'ms';
             localStorage.setItem('fastestTime', fastestTime);
         }
     }

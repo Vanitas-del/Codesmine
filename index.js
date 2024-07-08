@@ -23,7 +23,7 @@ document.addEventListener('click', function() {
     if (timerRunning) {
         endTime = new Date().getTime();
         let reactionTime = endTime - startTime;
-        reactionTimeElement.textContent = reactionTime + 's';
+        reactionTimeElement.textContent = reactionTime + 'ms';
         lights.forEach(function(light) {
             light.classList.remove('on');
         });

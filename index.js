@@ -1,8 +1,16 @@
 let lights = document.querySelectorAll('.light');
 let reactionTimeElement = document.getElementById('time');
+let fastestTimeElement = document.getElementById('fastest-time');
 let startTime;
 let endTime;
 let timerRunning = false;
+let fastestTime = localStorage.getItem('fastestTime');
+
+if (fastestTime) {
+    fastestTimeElement.textContent = fastestTime + 's';
+} else {
+    fastestTimeElement.textContent = '-';
+}
 
 document.addEventListener('DOMContentLoaded', function() {
     let intervalId = setInterval(function() {
@@ -28,5 +36,11 @@ document.addEventListener('click', function() {
             light.classList.remove('on');
         });
         timerRunning = false;
+
+        if (!fastestTime || reactionTime < fastestTime) {
+            fastestTime = reactionTime;
+            fastestTimeElement.textContent = fastestTime + 's';
+            localStorage.setItem('fastestTime', fastestTime);
+        }
     }
 });

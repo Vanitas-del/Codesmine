@@ -31,3 +31,10 @@ body {
     font-weight: bold;
     margin-top: 20px;
 }
+
+#fastest-reaction {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #008000; /* green */
+}

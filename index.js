@@ -31,7 +31,7 @@ document.addEventListener('click', function() {
   if (timerRunning) {
     endTime = new Date().getTime();
     let reactionTime = endTime - startTime;
-    reactionTimeElement.textContent = reactionTime + 's';
+    reactionTimeElement.textContent = reactionTime + 'ms';
     lights.forEach(function(light) {
       light.classList.remove('on');
     });
@@ -39,7 +39,7 @@ document.addEventListener('click', function() {
 
     if (!fastestTime || reactionTime < fastestTime) {
       fastestTime = reactionTime;
-      fastestTimeElement.textContent = fastestTime + 's';
+      fastestTimeElement.textContent = fastestTime + 'ms';
       localStorage.setItem('fastestTime', fastestTime);
     }
   }

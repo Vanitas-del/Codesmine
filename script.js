@@ -33,7 +33,22 @@ document.addEventListener('DOMContentLoaded', function () {
   document.addEventListener('click', function () {
       if (!timerRunning) {
           jumpStartElement.classList.remove('hidden');
-          jumpStartElement.textContent = 'Wait for the lights to turn red!';
+          jumpStartElement.textContent = 'Jump Start!';
+          jumpStart = true;
+          return;
+      }
+
+      if (jumpStart) {
+          jumpStartElement.classList.add('hidden');
+          jumpStart = false;
+          let randomTime = Math.random() * 3000 + 1000;
+          setTimeout(function () {
+              lights.forEach(function (light) {
+                  light.classList.add('on');
+              });
+              startTime = new Date().getTime();
+              timerRunning = true;
+          }, randomTime);
           return;
       }
 

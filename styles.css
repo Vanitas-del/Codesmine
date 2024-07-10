@@ -39,7 +39,7 @@ main {
 
 .light.on {
     background-color: #ff0000;
-    /* bright blue */
+    /* red */
 }
 
 #reaction-time,
@@ -52,6 +52,17 @@ main {
 #fastest-reaction {
     color: #008000;
     /* green */
+}
+
+#jump-start {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ff0000;
+    margin-top: 10px;
+}
+
+.hidden {
+    display: none;
 }
 
 #created-by {

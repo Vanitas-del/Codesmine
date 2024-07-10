@@ -45,9 +45,6 @@ document.addEventListener('DOMContentLoaded', function () {
               fastestTimeElement.textContent = fastestTime + 'ms';
               localStorage.setItem('fastestTime', fastestTime);
           }
-      } else if (!jumpStart) {
-          jumpStart = true;
-          jumpStartElement.classList.remove('hidden'); // Show jump start message
-      }
+      } 
   });
 });
